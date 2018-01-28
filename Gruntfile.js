@@ -1,8 +1,8 @@
 /*!
  * Bootaide's Gruntfile
- * http://zafree.github.io/bootaide
+ * http://khaledasabina.github.io
  * Copyright 2014-2015 Zafree
- * Licensed under MIT (https://github.com/zafree/bootaide/blob/master/LICENSE)
+ * Licensed under MIT (https://github.com/khaledaSabina/khaledaSabina.github.io/blob/master/LICENSE)
  */
 
 module.exports = function(grunt) {
