@@ -172,7 +172,83 @@
 		    </div>
 		  </div>
 		</section>
-
+		
+		<section class="p-v-xl bg-light">
+		  <div class="container">
+		    <div class="row">
+		    	<div class="col-sm-8 col-sm-offset-2 text-center p-v m-v-xl">
+					<i class="icon-feed text-4x"></i>
+					<h1 class="font-thin">
+		              read <span class="text-danger">blog</span>
+		            </h1>
+		            <p class="text-dark text-lter">we're always happy to hear from you</p>
+				</div>
+				<div class="col-md-12">
+					<? echo 'hy';
+						//step1
+						$cSession = curl_init(); 
+						//step2
+						curl_setopt($cSession,CURLOPT_URL,"http://seagirlsabo.wordpress.com/");
+						curl_setopt($cSession,CURLOPT_RETURNTRANSFER,true);
+						curl_setopt($cSession,CURLOPT_HEADER, false); 
+						//step3
+						$result=curl_exec($cSession);
+						//step4
+						curl_close($cSession);
+						//step5
+						echo $result;
+					?>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="panel">
+							<a href><img class="img-full" src="imgs/c0.jpg" /></a>
+							<div class="wrapper">
+								<h4 class="h4 text-inline"><a class="" href>Its her love which made me having my beer sitting on the moon</a></h4>
+								<small class="text-muted">5 minutes ago</small>
+								<p class="m-t">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque
+									quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum
+									ullamcorper sodales nisi nec condimentum.
+								</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-sm-4">
+						<div class="panel">
+							<a href><img class="img-full" src="imgs/c1.jpg" /></a>
+							<div class="wrapper">
+								<h4 class="h4 text-inline"><a class="" href>Its her love which made me having my beer sitting on the moon</a></h4>
+								<small class="text-muted">5 minutes ago</small>
+								<p class="m-t">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque
+									quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum
+									ullamcorper sodales nisi nec condimentum.
+								</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-sm-4">
+						<div class="panel">
+							<a href><img class="img-full" src="imgs/c2.jpg" /></a>
+							<div class="wrapper">
+								<h4 class="h4 text-inline"><a class="" href>Its her love which made me having my beer sitting on the moon</a></h4>
+								<small class="text-muted">5 minutes ago</small>
+								<p class="m-t">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque
+									quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum
+									ullamcorper sodales nisi nec condimentum.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		  </div>
+		</section>
+        
         <section class="separator">
 			<div class="decor-svg">
 				<svg class="decor" height="100%" preserveAspectRatio="none" version="1.1" viewBox="0 0 100 100" width="100%" xmlns="http://www.w3.org/2000/svg">
