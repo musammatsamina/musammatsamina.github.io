@@ -1,5 +1,5 @@
 {
-  "name": "bootaide",
+  "name": "sheikhprofile",
   "version": "0.0.0",
   "description": "Panic free less framework and loving bootstrap based web ui kits package.",
   "scripts": {
@@ -16,11 +16,11 @@
     "kit",
     "responsive"
   ],
-  "homepage": "http://khaledasabina.github.io",
-  "author": "khaleda Bintay Khaleque",
+  "homepage": "http://musammatsamina.github.io",
+  "author": "Musammat Samina",
   "license": {
     "type": "MIT",
-    "url": "https://github.com/khaledaSabina/khaledaSabina.github.io/blob/master/LICENSE"
+    "url": "https://github.com/khaledaSabina/musammatsamina.github.io/blob/master/LICENSE"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
