@@ -90,17 +90,21 @@
 <section>
 <div class="container">
    <div class="row p-v m-t-md text-center">
-			
-<div class="owl-carousel owl-theme"> 
-        
-    <div class="item-video" data-merge="1"><a class="owl-video" href="https://www.youtube.com/watch?v=BvNp1NrI03E"></a></div>
-    <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=BvNp1NrI03E"></a></div> 
-    <div class="item-video" data-merge="1"><a class="owl-video" href="https://www.youtube.com/watch?v=BvNp1NrI03E"></a></div>
-    <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=BvNp1NrI03E"></a></div> 
-    <div class="item-video" data-merge="3"><a class="owl-video" href="https://www.youtube.com/watch?v=BvNp1NrI03E"></a></div>
-    <div class="item-video" data-merge="1"><a class="owl-video" href="https://www.youtube.com/watch?v=0fhoIate4qI"></a></div>
-    <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=EF_kj2ojZaE"></a></div> 
-</div> 
+<div class="owl-carousel owl-theme">
+    <div class="item"><img src="https://www.w3schools.com/css/img_fjords.jpg" alt=""></div>
+    <div class="item"><img src="https://www.w3schools.com/css/img_fjords.jpg" alt=""></div>
+    <div class="item"><img src="https://www.w3schools.com/css/img_fjords.jpg" alt=""></div>
+    <div class="item"><img src="https://www.w3schools.com/css/img_fjords.jpg" alt=""></div>
+    <div class="item"><img src="https://www.w3schools.com/css/img_fjords.jpg" alt=""></div>
+    <div class="item"><img src="https://www.w3schools.com/css/img_fjords.jpg" alt=""></div>
+    <div class="item"><img src="https://www.w3schools.com/css/img_fjords.jpg" alt=""></div>
+    <div class="item"><img src="https://www.w3schools.com/css/img_fjords.jpg" alt=""></div>
+    <div class="item"><img src="https://www.w3schools.com/css/img_fjords.jpg" alt=""></div>
+    <div class="item"><img src="https://www.w3schools.com/css/img_fjords.jpg" alt=""></div>
+    <div class="item"><img src="https://www.w3schools.com/css/img_fjords.jpg" alt=""></div>
+</div>
+
+
     </div>
 </div>
 </section>
@@ -125,33 +129,33 @@
 				</div>
 			</div>
 		</section>
-<script type="">
 
-
-$('.owl-carousel').owlCarousel({
-        items:1,
-        merge:true,
-        loop:true,
-        margin:10,
-        video:true,
-        lazyLoad:true,
-        center:true,
-        responsive:{
-            480:{
-                items:2
-            },
-            600:{
-                items:4
-            }
-        }
-    })
-</script>
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script src="bower_components/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
 		<script src="bower_components/headroom.js/dist/headroom.min.js"></script> 
 		<script src="bower_components/owl-carousel2/dist/owl.carousel.min.js"></script>
 		<script src="dist/js/bootaide.min.js"></script>
-
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+<script type="text/javascript">
+$('.owl-carousel').owlCarousel({
+    rtl:true,
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+});
+</script>
 	</body>
 </html>
