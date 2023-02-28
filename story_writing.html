@@ -42,6 +42,44 @@
 		</section>
 
         <div w3-include-html="footer.html"></div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="bower_components/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
+		<script src="bower_components/headroom.js/dist/headroom.min.js"></script> 
+		<script src="bower_components/owl-carousel2/dist/owl.carousel.min.js"></script>
+		<script src="dist/js/bootaide.min.js"></script>
+<script type="text/javascript" src=""></script>
+<script type="text/javascript" src=""></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+
+<script type="text/javascript">
+$('.owl-carousel').owlCarousel({
+    rtl:true,
+    loop:true,
+    margin:9,
+    nav:false,
+    dots:false,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        600:{
+            items:3,
+            nav:false
+        },
+        1000:{
+            items:5,
+            nav:true,
+            loop:false
+        }
+    }
+});
+</script>
+
 <script>
       function addHTML() {
          var el, i, domEl, fileName, xmlHttp;
