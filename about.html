@@ -25,55 +25,7 @@
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
 
-		<header class="bg-white navbar-fixed-top box-shadow">
-			<div class="container">
-				<div class="navbar-header">
-					<button class="btn btn-link visible-xs pull-right m-r m-t-sm" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-						<i class="fa fa-bars"></i>
-					</button>
-					<a href="." class="navbar-brand m-r-lg"><img src="img/logo.png" class="m-r-sm hide"><span class="h3 font-bold">Musammat Samina</span></a>
-				</div>
-				<div class="collapse navbar-collapse">
-					<ul class="nav navbar-nav navbar-right">
-						<li class="hide">
-							<a href=".">Home</a>
-						</li>
-						<li>
-							<a href="about.html">About</a>
-						</li>
-                                                <li>
-							<a href="portfolio.html">Portfolio</a>
-						</li>
-						<li>
-							<a href="contact.html">Contact</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		   </header>
-<section class="bg-dark p-v-xxl">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-8 col-sm-offset-2 text-center m-t-lg">
-                                                <img class="thumb-xl img-circle b b-10x b-a-white" src="imgs/samina.jpg" />
-						<h1 class="h1 font-semi-bold text-danger"> মোসাম্মত সামিনা </br>( مسمت سمين)</h1>
-                                                <h3 class="h3 font-semi-bold text-danger>  MUSAMMAT SAMINA  </h3>
-						<h3 class="m-t-lg l-h-1x text-info">Software Engineer | Programmer | Publisher | Photographer | Traveler </h3>
-							
-                                                <div class="text-lg m-t">
-							<a class="m-r-sm" href="https://twitter.com/seagirlsabo"><i class="fa fa-twitter"></i></a>
-							<a class="m-r-sm" href="https://facebook.com/musammat.samina"><i class="fa fa-facebook"></i></a>
-							<a class="m-r-sm" href="http://about.me/imsamina"><i class="fa fa-codepen"></i></a>
-							<a class="m-r-sm" href="https://www.linkedin.com/in/musammatsamina-47577222"><i class="fa fa-linkedin"></i></a>
-                                                        <a class="m-r-sm" href="https://www.facebook.com/profile.php?id=100075473425112&mibextid=ZbWKwL"><i class="fa fa-graduation-cap"></i></a>
-							<a class="m-r-sm" href="https://www.github.com/musammatsamina"><i class="fa fa-github"></i></a>
-                                                  <a class="m-r-sm" href="https://www.youtube.com/@musammatsamina5939"><i class="fa fa-youtube-play"></i></a>
-                                                  <a class="m-r-sm" href="mailto:musammatsamina@gmail.com"><i class="fa fa-envelope-open"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+		<div w3-include-html="navigation.html"></div>
 
 	  	<section class="p-v-xl bg-light">
 		  <div class="container">
@@ -136,11 +88,45 @@
 <script type="text/javascript" src=""></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
-<script type="">
-
-
-
-</script>
+<script>
+      function addHTML() {
+         var el, i, domEl, fileName, xmlHttp;
+         
+         /*Iterate all DOM*/
+         el = document.getElementsByTagName("*");
+         for (i = 0; i < el.length; i++) {
+            domEl = el[i];
+            
+            /*find the element having w3-include-html attribute*/
+            fileName = domEl.getAttribute("w3-include-html");
+            if (fileName) {
+               
+               /*http request with attribute value as file name*/
+               xmlHttp = new XMLHttpRequest();
+               xmlHttp.onreadystatechange = function() {
+                  if (this.readyState == 4) {
+                     if (this.status == 200) {
+                        domEl.innerHTML = this.responseText;
+                     }
+                     if (this.status == 404) {
+                        domEl.innerHTML = "Page not found.";
+                     }
+                     
+                     /* Remove the attribute and invoke the function again*/
+                     domEl.removeAttribute("w3-include-html");
+                     addHTML();
+                  }
+               }
+               xmlHttp.open("GET", fileName, true);
+               xmlHttp.send();
+               
+               /*function ends*/
+               return;
+            }
+         }
+      }
+      addHTML();
+   </script>
 <script type="text/javascript">
 $('.owl-carousel').owlCarousel({
     rtl:true,
