@@ -51,95 +51,87 @@
    <div class="row">
 <script type="text/javascript" src="js/chartlib3.js"></script>
 <script type="text/javascript" src="js/chartlibserial3.js"></script>
+<!-- Resources -->
+<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
 
+<!-- Chart code -->
 <script>
-  var chart = AmCharts.makeChart("chartdiv", {
-  "type": "serial",
-  "startDuration": 2,
-  "dataProvider": [{
-    "country": "USA",
-    "visits": 4025,
-    "color": "#0C8ECF"
-  }, {
-    "country": "China",
-    "visits": 3252,
-    "color": "#FF6600"
-  }, {
-    "country": "Japan",
-    "visits": 1509,
-    "color": "#FF9E01"
-  }, {
-    "country": "Germany",
-    "visits": 2322,
-    "color": "#FCD202"
-  }, {
-    "country": "UK",
-    "visits": 2125,
-    "color": "#F8FF01"
-  }, {
-    "country": "India",
-    "visits": 3984,
-    "color": "#04D215"
-  }, {
-    "country": "South Korea",
-    "visits": 1443,
-    "color": "#8A0CCF"
-  }, {
-    "country": "Canada",
-    "visits": 2341,
-    "color": "#CD0D74"
-  }],
-  "valueAxes": [{
-    "position": "left",
-    "axisAlpha": 0,
-    "gridAlpha": 0
-  }],
-  "graphs": [{
-    "balloonText": "[[category]]: <b>[[value]]</b>",
-    "colorField": "color",
-    "fillAlphas": 0.75,
-    "lineAlpha": 0.5,
-    "type": "column",
-    "topRadius": 1,
-    "valueField": "visits"
-  }],
-  "depth3D": 50,
-  "angle": 30,
-  "chartCursor": {
-    "categoryBalloonEnabled": false,
-    "cursorAlpha": 0,
-    "zoomable": false
-  },
-  "categoryField": "country",
-  "categoryAxis": {
-    "gridPosition": "start",
-    "axisAlpha": 0,
-    "gridAlpha": 0
+am4core.ready(function() {
 
-  },
-  "exportConfig": {
-    "menuTop": "20px",
-    "menuRight": "20px",
-    "menuItems": [{
-      "icon": '/imgs/export.png',
-      "format": 'png'
-    }]
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+// Create chart instance
+var chart = am4core.create("chartdiv", am4charts.XYChart3D);
+
+chart.titles.create().text = "Crude oil reserves";
+
+// Add data
+chart.data = [{
+  "category": "2023 Q1",
+  "value1": 30,
+  "value2": 70
+}, {
+  "category": "2023 Q2",
+  "value1": 15,
+  "value2": 85
+}, {
+  "category": "2023 Q3",
+  "value1": 40,
+  "value2": 60
+}, {
+  "category": "2023 Q4",
+  "value1": 55,
+  "value2": 45
+}];
+
+// Create axes
+var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+categoryAxis.dataFields.category = "category";
+categoryAxis.renderer.grid.template.location = 0;
+categoryAxis.renderer.grid.template.strokeOpacity = 0;
+
+var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+valueAxis.renderer.grid.template.strokeOpacity = 0;
+valueAxis.min = -11;
+valueAxis.max = 115;
+valueAxis.strictMinMax = true;
+valueAxis.renderer.baseGrid.disabled = true;
+valueAxis.renderer.labels.template.adapter.add("text", function(text) {
+  if ((text > 100) || (text < 0)) {
+    return "";
   }
-}, 0);
-
-jQuery('.chart-input').off().on('input change', function() {
-  var property = jQuery(this).data('property');
-  var target = chart;
-  chart.startDuration = 0;
-
-  if (property == 'topRadius') {
-    target = chart.graphs[0];
+  else {
+    return text + "%";
   }
+})
 
-  target[property] = this.value;
-  chart.validateNow();
-});
+// Create series
+var series1 = chart.series.push(new am4charts.ConeSeries());
+series1.dataFields.valueY = "value1";
+series1.dataFields.categoryX = "category";
+series1.columns.template.width = am4core.percent(80);
+series1.columns.template.fillOpacity = 0.9;
+series1.columns.template.strokeOpacity = 1;
+series1.columns.template.strokeWidth = 2;
+
+var series2 = chart.series.push(new am4charts.ConeSeries());
+series2.dataFields.valueY = "value2";
+series2.dataFields.categoryX = "category";
+series2.stacked = true;
+series2.columns.template.width = am4core.percent(80);
+series2.columns.template.fill = am4core.color("#000");
+series2.columns.template.fillOpacity = 0.1;
+series2.columns.template.stroke = am4core.color("#000");
+series2.columns.template.strokeOpacity = 0.2;
+series2.columns.template.strokeWidth = 2;
+
+}); // end am4core.ready()
 </script>
+
 <div id="chartdiv"></div>
 
 </div>
