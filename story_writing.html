@@ -18,7 +18,42 @@
 <link rel="stylesheet" href="https://kit.fontawesome.com/4ff5cc0e27.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css">
+<style type="text/css">
+ #portfolio .row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
 
+/* Create four equal columns that sits next to each other */
+  #portfolio .column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+#portfolio .column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  #portfolio .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  #portfolio .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+</style>
 	</head>
 	<body>
 		<!--[if lt IE 10]>
@@ -40,7 +75,47 @@
 		    </div>
 		  </div>
 		</section>
-
+                <section class="p-v-xl bg-light">
+                   <div class="container">
+                       <div id="portfolio" class="row">
+  <div id="portfolio" class="column">
+    <img src="imgs/e51.jpg">
+    <img src="imgs/e52.jpg">
+    <img src="imgs/e53.jpg">
+    <img src="imgs/e54.jpg">
+    <img src="imgs/e55.jpg">
+    <img src="imgs/e56.jpg">
+    <img src="imgs/e57.jpg">
+  </div>
+  <div id="portfolio" class="column">
+    <img src="imgs/e58.jpg">
+    <img src="imgs/e59.jpg">
+    <img src="imgs/e60.jpg">
+    <img src="imgs/e61.jpg">
+    <img src="imgs/e62.jpg">
+    <img src="imgs/e63.jpg">
+  </div>
+  <div id="portfolio" class="column">
+    <img src="imgs/e64.jpg">
+    <img src="imgs/e51.jpg">
+    <img src="imgs/e52.jpg">
+    <img src="imgs/e53.jpg">
+    <img src="imgs/e54.jpg">
+    <img src="imgs/e55.jpg">
+    <img src="imgs/e56.jpg">
+  </div>
+  <div id="portfolio" class="column">
+    <img src="imgs/e57.jpg">
+    <img src="imgs/e58.jpg">
+    <img src="imgs/e59.jpg">
+    <img src="imgs/e60.jpg">
+    <img src="imgs/e61.jpg">
+    <img src="imgs/e62.jpg">
+  </div>
+</div>
+                  
+                   </div>
+                </section>
         <div w3-include-html="footer.html"></div>
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
