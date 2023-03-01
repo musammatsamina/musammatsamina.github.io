@@ -25,6 +25,8 @@
   font-size: 11px;
 }
 </style>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		
 	</head>
 	<body>
 		<!--[if lt IE 10]>
@@ -49,7 +51,44 @@
 <section>
 <div class="container">
    <div class="row">
+<script type="text/javascript" src="js/chartlib3.js"></script>
+<script type="text/javascript" src="js/chartlibserial.js"></script>
 
+<script>
+var chart = AmCharts.makeChart("chartdiv", {
+  "type": "serial",
+  "startDuration": 2,
+  "dataProvider": [{
+    "country": "USA",
+    "visits": 4025,
+    "color": "#FF0F00"
+  }, {
+    "country": "China",
+    "visits": 1882,
+    "color": "#FF6600"
+  }, {
+    "country": "Japan",
+    "visits": 1809,
+    "color": "#FF9E01"
+  }, {
+    "country": "Germany",
+    "visits": 1322,
+    "color": "#FCD202"
+  }, {
+    "country": "UK",
+    "visits": 1122,
+    "color": "#F8FF01"
+  }, {
+    "country": "India",
+    "visits": 984,
+    "color": "#04D215"
+  }, {
+    "country": "South Korea",
+    "visits": 443,
+    "color": "#8A0CCF"
+  }, {
+    "country": "Canada",
+</script>
 <div id="chartdiv"></div>
 <div class="container-fluid">
   <div class="row text-center" style="overflow:hidden;">
@@ -92,54 +131,12 @@
 			</div>
 		</section>
 
-		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script src="bower_components/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
 		<script src="bower_components/headroom.js/dist/headroom.min.js"></script> 
 		<script src="bower_components/owl-carousel2/dist/owl.carousel.min.js"></script>
 		<script src="dist/js/bootaide.min.js"></script>
-<script type="text/javascript" src=""></script>
-<script type="text/javascript" src=""></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
-<script type="text/javascript" src="js/chartlib3.js"></script>
-<script type="text/javascript" src="js/chartlibserial.js"></script>
 
-<script>
-var chart = AmCharts.makeChart("chartdiv", {
-  "type": "serial",
-  "startDuration": 2,
-  "dataProvider": [{
-    "country": "USA",
-    "visits": 4025,
-    "color": "#FF0F00"
-  }, {
-    "country": "China",
-    "visits": 1882,
-    "color": "#FF6600"
-  }, {
-    "country": "Japan",
-    "visits": 1809,
-    "color": "#FF9E01"
-  }, {
-    "country": "Germany",
-    "visits": 1322,
-    "color": "#FCD202"
-  }, {
-    "country": "UK",
-    "visits": 1122,
-    "color": "#F8FF01"
-  }, {
-    "country": "India",
-    "visits": 984,
-    "color": "#04D215"
-  }, {
-    "country": "South Korea",
-    "visits": 443,
-    "color": "#8A0CCF"
-  }, {
-    "country": "Canada",
-</script>
 <script>
       function addHTML() {
          var el, i, domEl, fileName, xmlHttp;
@@ -179,30 +176,6 @@ var chart = AmCharts.makeChart("chartdiv", {
       }
       addHTML();
    </script>
-<script type="text/javascript">
-$('.owl-carousel').owlCarousel({
-    rtl:true,
-    loop:true,
-    margin:9,
-    nav:false,
-    dots:false,
-    responsiveClass:true,
-    responsive:{
-        0:{
-            items:1,
-            nav:true
-        },
-        600:{
-            items:3,
-            nav:false
-        },
-        1000:{
-            items:5,
-            nav:true,
-            loop:false
-        }
-    }
-});
-</script>
+
 </body>
 </html>
