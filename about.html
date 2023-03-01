@@ -18,7 +18,35 @@
 <link rel="stylesheet" href="https://kit.fontawesome.com/4ff5cc0e27.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css">
+<style type="text/css">
+/* Equal Heights for OwlCarousel 2 */
 
+.owl-carousel {
+	.owl-stage {
+		display: flex;
+	}
+	.owl-item {
+		display: flex;
+		flex: 1 0 auto;
+	}
+	.caption {
+		display: flex;
+		flex: 1 0 auto;
+		flex-direction: column;
+	}
+	.flex-text {
+		flex-grow: 1
+	}
+	.thumbnail {
+		display: flex;
+		flex-direction: column;
+		margin: 0 15px;
+	}
+}
+
+
+/* Demo Styles */
+</style>
 	</head>
 	<body>
 		<!--[if lt IE 10]>
@@ -43,19 +71,30 @@
 <section>
 <div class="container">
    <div class="row">
-<div class="owl-carousel owl-theme">
-    <div class="item"><img src="https://www.w3schools.com/css/img_fjords.jpg" alt=""></div>
-    <div class="item"><img src="https://www.w3schools.com/css/img_fjords.jpg" alt=""></div>
-    <div class="item"><img src="https://www.w3schools.com/css/img_fjords.jpg" alt=""></div>
-    <div class="item"><img src="https://www.w3schools.com/css/img_fjords.jpg" alt=""></div>
-    <div class="item"><img src="https://www.w3schools.com/css/img_fjords.jpg" alt=""></div>
-    <div class="item"><img src="https://www.w3schools.com/css/img_fjords.jpg" alt=""></div>
-    <div class="item"><img src="https://www.w3schools.com/css/img_fjords.jpg" alt=""></div>
-    <div class="item"><img src="https://www.w3schools.com/css/img_fjords.jpg" alt=""></div>
-    <div class="item"><img src="https://www.w3schools.com/css/img_fjords.jpg" alt=""></div>
-    <div class="item"><img src="https://www.w3schools.com/css/img_fjords.jpg" alt=""></div>
-    <div class="item"><img src="https://www.w3schools.com/css/img_fjords.jpg" alt=""></div>
-</div>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">
+			 Owl Carousel 2 Equal Heights
+      </a>
+		</div>
+	</div>
+</nav>
+<div class="latest-blog-posts bg-white pt60 pb60">
+	<div class="container-fluid">
+		<div id="owl-demo-2" class="owl-carousel owl-theme">
+			<article class="thumbnail item" itemscope="" itemtype="http://schema.org/CreativeWork">
+				<a class="blog-thumb-img" href="/5-ways-baby-boomers-changing-healthcare/" title="">
+					<img src="http://placehold.it/500x300/4DC7A0/ffffff" class="img-responsive" />
+				</a>
+				<div class="caption">
+					<h4 itemprop="headline">
+            <a href="#" rel="bookmark">5 Ways Baby Boomers Are Changing Healthcare</a>
+          </h4>
+					<p itemprop="text" class="flex-text text-muted">5 ways baby boomers are changing healthcare Starting in 2011, 3 million baby boomers each year reach retirement age....</p>
+					<p><a class="btn btn-primary btn-block">Button Text</a></p>
+					
+				</div>
 </div>
 </section>
         <section class="separator">
@@ -84,10 +123,6 @@
 		<script src="bower_components/headroom.js/dist/headroom.min.js"></script> 
 		<script src="bower_components/owl-carousel2/dist/owl.carousel.min.js"></script>
 		<script src="dist/js/bootaide.min.js"></script>
-<script type="text/javascript" src=""></script>
-<script type="text/javascript" src=""></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
 <script>
       function addHTML() {
          var el, i, domEl, fileName, xmlHttp;
@@ -128,28 +163,36 @@
       addHTML();
    </script>
 <script type="text/javascript">
-$('.owl-carousel').owlCarousel({
-    rtl:true,
-    loop:true,
-    margin:9,
-    nav:false,
-    dots:false,
-    responsiveClass:true,
-    responsive:{
-        0:{
-            items:1,
-            nav:true
-        },
-        600:{
-            items:3,
-            nav:false
-        },
-        1000:{
-            items:5,
-            nav:true,
-            loop:false
-        }
-    }
+
+		nestedItemSelector: false,
+		itemElement: 'div',
+		stageElement: 'div',
+
+		refreshClass: 'owl-refresh',
+		loadedClass: 'owl-loaded',
+		loadingClass: 'owl-loading',
+		rtlClass: 'owl-rtl',
+		responsiveClass: 'owl-responsive',
+		dragClass: 'owl-drag',
+		itemClass: 'owl-item',
+		stageClass: 'owl-stage',
+		stageOuterClass: 'owl-stage-outer',
+		grabClass: 'owl-grab',
+		autoHeight: false,
+		lazyLoad: false
+
+	});
+
+	$(".next").click(function() {
+		owl.trigger('owl.next');
+	});
+	$(".prev").click(function() {
+		owl.trigger('owl.prev');
+	});
+
+	/* Equal Heights using javascript */
+	// $('.latest-blog-posts .thumbnail.item').matchHeight();
+
 });
 </script>
 </body>
