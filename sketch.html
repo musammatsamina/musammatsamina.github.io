@@ -16,11 +16,18 @@
 		<link rel="stylesheet" href="dist/css/bootaide.min.css" />
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 <link rel="stylesheet" href="https://kit.fontawesome.com/4ff5cc0e27.css" crossorigin="anonymous">
-    
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="js/turn.min.js"></script>
+    <script type="text/javascript" src="js/turn.min.js"></script>
 
-
+<style type="text/css">
+#magazine{
+	width:576px;
+	height:752px;
+}
+#magazine .turn-page{
+	background-color:#ccc;
+	background-size:100% 100%;
+}
+</style>
 </head>
 	<body>
 		<!--[if lt IE 10]>
@@ -119,10 +126,28 @@
    </script>
 <script type="text/javascript">
 
-	$("#flipbook").turn({
-		width: 400,
-		height: 300,
-		autoCenter: true
+	$(window).ready(function() {
+		$('#magazine').turn({
+							display: 'single',
+							acceleration: true,
+							gradients: !$.isTouch,
+							elevation:50,
+							when: {
+								turned: function(e, page) {
+									/*console.log('Current view: ', $(this).turn('view'));*/
+								}
+							}
+						});
+	});
+	
+	
+	$(window).bind('keydown', function(e){
+		
+		if (e.keyCode==37)
+			$('#magazine').turn('previous');
+		else if (e.keyCode==39)
+			$('#magazine').turn('next');
+			
 	});
 </script>
 
