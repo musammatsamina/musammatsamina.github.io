@@ -20,16 +20,7 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="js/turn.min.js"></script>
 
-<style type="text/css">
-#magazine{
-	width:100%;
-	height:752px;
-}
-#magazine .turn-page{
-	background-color:#ccc;
-	background-size:100% 100%;
-}
-</style>
+
 </head>
 	<body>
 		<!--[if lt IE 10]>
@@ -53,7 +44,7 @@
 		</section>
 
 <section class="p-v-xl bg-light">
-<div id="magazine">
+<div id="flipbook">
 	<div style="background-image:url(imgs/e51.jpg);"></div>
 	<div style="background-image:url(imgs/e52.jpg);"></div>
 	<div style="background-image:url(imgs/e53.jpg);"></div>
@@ -128,30 +119,11 @@
    </script>
 <script type="text/javascript">
 
-	$(window).ready(function() {
-		$('#magazine').turn({
-							display: 'double',
-							acceleration: true,
-							gradients: !$.isTouch,
-							elevation:50,
-							when: {
-								turned: function(e, page) {
-									/*console.log('Current view: ', $(this).turn('view'));*/
-								}
-							}
-						});
+	$("#flipbook").turn({
+		width: 400,
+		height: 300,
+		autoCenter: true
 	});
-	
-	
-	$(window).bind('keydown', function(e){
-		
-		if (e.keyCode==37)
-			$('#magazine').turn('previous');
-		else if (e.keyCode==39)
-			$('#magazine').turn('next');
-			
-	});
-
 </script>
 
 </body>
