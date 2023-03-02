@@ -11,16 +11,14 @@
 		<link rel="stylesheet" href="bower_components/animate.css/animate.min.css" />
 	    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
 	    <link rel="stylesheet" href="bower_components/simple-line-icons/css/simple-line-icons.css" />
-	    <link rel="stylesheet" href="bower_components/owl-carousel2/dist/assets/owl.carousel.min.css" />
-        <link rel="stylesheet" href="bower_components/owl-carousel2/dist/assets/owl.theme.default.min.css" />
-		<link rel="stylesheet" href="dist/css/bootaide.min.css" />
+	    <link rel="stylesheet" href="dist/css/bootaide.min.css" />
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 <link rel="stylesheet" href="https://kit.fontawesome.com/4ff5cc0e27.css" crossorigin="anonymous">
     <script type="text/javascript" src="js/turn.min.js"></script>
 
 <style type="text/css">
 #magazine{
-	width:100%;
+	width:500px;
 	height:752px;
 }
 #magazine .turn-page{
@@ -128,7 +126,7 @@
 
 	$(window).ready(function() {
 		$('#magazine').turn({
-							display: 'single',
+							display: 'double',
 							acceleration: true,
 							gradients: !$.isTouch,
 							elevation:50,
@@ -149,6 +147,7 @@
 			$('#magazine').turn('next');
 			
 	});
+
 </script>
 
 </body>
