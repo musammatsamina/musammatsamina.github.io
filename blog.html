@@ -40,23 +40,7 @@
 		      	<i class="icon-paper-plane text-4x"></i>
 		        <h1 class="text-dark">Blog</h1>
 			      <h2 class="text-danger"> 
-				      <?php
-include ('class.banglaDate.php');
-$bn = new BanglaDate(time());
-print_r($bn->get_date());
-
-echo '<br>';
-$bn->set_time(time(), 0);
-print_r($bn->get_date());
-
-echo '<br>';
-$bn->set_time(strtotime('05-03-1987'), 0);
-print_r($bn->get_date());
-
-echo '<br>';
-$bn->set_time(strtotime('05-03-1987'), 6);
-print_r($bn->get_date());
-				      ?>
+				     
 			      </h2>
 		        <p class=""> Chart initial stage preview...</p>
 		        <div class="line line-lg w-3x b-b b-danger m-auto"></div>
