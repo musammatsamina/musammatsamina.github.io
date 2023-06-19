@@ -26,7 +26,8 @@
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 		
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
+<link rel="stylesheet" type="text/css" href="onScreenKeyboard.css" />        
+      
 	</head>
 	<body>
 		<!--[if lt IE 10]>
@@ -143,6 +144,17 @@ series2.columns.template.strokeWidth = 2;
 </div>
 </section>
 
+<section class="">
+			<div class="container">
+				<div class="row p-v m-t-md text-center">
+					
+<div class="col-md-8">
+			<input type="text" class="form-control field_search" name="search" placeholder="Search">
+		</div>
+
+</div>
+</div>
+</section>
 
  <section class="separator">
 			<div class="decor-svg">
@@ -170,7 +182,14 @@ series2.columns.template.strokeWidth = 2;
 		<script src="bower_components/headroom.js/dist/headroom.min.js"></script> 
 		<script src="bower_components/owl-carousel2/dist/owl.carousel.min.js"></script>
 		<script src="dist/js/bootaide.min.js"></script>
+        <script type="text/javascript" src="jquery.onScreenKeyboard.min.js"></script>
+<script>
+    $('.field_search').onScreenKeyboard({
+        rewireReturn: 'submit',
+        rewireTab: true
+    });
 
+</script>
 <script>
       function addHTML() {
          var el, i, domEl, fileName, xmlHttp;
