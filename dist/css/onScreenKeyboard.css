@@ -129,6 +129,15 @@
 
 /*-----[Customisable styles]--------------------------------------------------*/
 
+#osk-container > .skyblue {
+    width: 55%;     /* Account for 2% padding and a vertical scroll bar */
+    min-width: 500px;
+    max-width: 1200px;
+    background: #87CEEB;
+    border-radius: 2%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
 #osk-container {
     width: 55%;     /* Account for 2% padding and a vertical scroll bar */
     min-width: 500px;
