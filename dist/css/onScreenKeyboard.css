@@ -1,0 +1,162 @@
+/*-----[Keyboard structure]---------------------------------------------------*/
+@font-face {
+    font-family: 'SolaimanLipi';
+    src: url('fonts/SolaimanLipi.eot');
+    src: local("SolaimanLipi"),
+        url('fonts/SolaimanLipi.eot?#iefix') format('embedded-opentype'),
+        url('fonts/SolaimanLipi.woff') format('woff'),
+        url('fonts/SolaimanLipi.otf') format('otf'),
+        url('fonts/SolaimanLipi.ttf') format('truetype'),
+        url('fonts/SolaimanLipi.svg#SolaimanLipi') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.col-md-8{
+ width: 50%;
+ margin: 0 auto;
+}
+.input {
+    border: 1px solid darkgray;
+    font-size: 20px;
+    height: 40px;
+    width: 80%;
+}
+.form-control {
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #555;
+    display: block;
+    font-size: 14px;
+    height: 34px;
+    line-height: 1.42857;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    vertical-align: middle;
+    width: 100%;
+}
+#osk-container {
+    visibility: hidden;
+    position: fixed;
+    overflow: hidden;
+    padding: 1%;
+    z-index: 100;
+	font-family: SolaimanLipi;
+}
+
+#osk-container > li {
+    float: left;
+    width: 4%;
+    height: 2em;
+    margin: 0 0.22% 4px 3px;
+    line-height: 2em;
+    text-align: center;
+    list-style-type: none;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#osk-container > .osk-capslock,
+#osk-container > .osk-tab,
+#osk-container > .osk-shift {
+    clear: left;
+}
+
+#osk-container > .osk-dragger {
+    display: none;
+    width: 100%;
+    cursor: move;
+}
+
+#osk-container > .osk-dragger:hover {
+    position: static;
+}
+
+#osk-container > .osk-tab,
+#osk-container > .osk-backspace {
+    width: 14.9709302%;
+}
+
+#osk-container > .osk-capslock {
+    width: 13.6337209%;
+}
+
+#osk-container > .osk-return {
+    width: 13.6918605%;
+}
+
+#osk-container > .osk-shift {
+    width: 16.2381395%;
+}
+
+#osk-container > .osk-hide {
+    width: 17.5581396%;
+}
+
+#osk-container > .osk-space {
+    clear: left;
+    width: 100%;
+    margin: 0;
+}
+
+#osk-container > .osk-last-item {
+    margin-right: 0 !important;
+}
+
+#osk-container .osk-on {
+    display: none;
+}
+
+#osk-container > .osk-uppercase {
+    text-transform: uppercase;
+}
+
+#osk-container > .osk-disabled {
+    cursor: default;
+}
+
+#osk-container > .osk-disabled:hover {
+    position: static;
+}
+
+#osk-container > li:hover {
+    position: relative;
+    top: 1px;
+}
+
+/*-----[Customisable styles]--------------------------------------------------*/
+
+#osk-container {
+    width: 55%;     /* Account for 2% padding and a vertical scroll bar */
+    min-width: 500px;
+    max-width: 1200px;
+    background: #4F9B68;
+    border-radius: 2%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#osk-container > li {
+    background: #FFF;
+    border-radius: 10%;
+    -moz-transition: 0.5s;
+}
+
+#osk-container > .osk-dragger {
+    background: transparent;
+    color: #AAA;
+}
+
+#osk-container > .osk-disabled {
+    background: #E5E5E5;
+    color: #CCC;
+}
+
+.osk-focused {
+    background: #FAFAFA !important;
+}
