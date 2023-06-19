@@ -11,15 +11,12 @@
     font-weight: normal;
     font-style: normal;
 }
-.col-md-8{
- width: 100%;
- margin: 0 auto;
-}
+
 .input {
     border: 1px solid darkgray;
     font-size: 20px;
     height: 40px;
-    width: 80%;
+    width: 100%;
 }
 .form-control {
     background-color: #fff;
