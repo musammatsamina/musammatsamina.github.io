@@ -245,7 +245,50 @@
 
 
 <div class="col-sm-8 col-sm-offset-2 text-center p-v m-v-xl">
-		      	<div class="prayer-times" >	</div>
+		      	<div class="prayer-times" >	
+
+
+<h1>مواقيت الصلاة</h1>
+ <p>الوقت المحلي: <span id="local-time"></span></p>
+ <p>الوقت المتبقي على الصلاة القادمة: <span id="remaining-time"></span></p>
+ <audio id="adhan-audio">
+ <source src="adhan.mp3" type="audio/mpeg">
+ Your browser does not support the audio element.
+ </audio>
+ <table>
+ <tbody>
+ <tr>
+ <th>الصلاة</th>
+ <th>الوقت</th>
+ </tr>
+ <tr>
+ <td>الفجر</td>
+ <td id="fajr"></td>
+ </tr>
+ <tr>
+ <td>الشروق</td>
+ <td id="sunrise"></td>
+ </tr>
+ <tr>
+ <td>الظهر</td>
+ <td id="dhuhr"></td>
+ </tr>
+ <tr>
+ <td>العصر</td>
+ <td id="asr"></td>
+ </tr>
+ <tr>
+ <td>المغرب</td>
+ <td id="maghrib"></td>
+ </tr>
+ <tr>
+ <td>العشاء</td>
+ <td id="isha"></td>
+ </tr>
+ </tbody>
+ </table>
+
+</div>
 	        <div class="line line-lg w-3x b-b b-danger m-auto"></div>
 </div>	
 
@@ -320,6 +363,130 @@
 		<script src="bower_components/headroom.js/dist/headroom.min.js"></script> 
 		
 		<script src="dist/js/bootaide.min.js"></script>
+
+<script>
+ var adhanAudio = document.getElementById('adhan-audio');
+ 
+ function displayLocalTime() {
+ var now = new Date();
+ var options = {
+ timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+ hour12: true,
+ hour: 'numeric',
+ minute: 'numeric'
+ };
+ var formattedTime = now.toLocaleString('en-US', options);
+ $("#local-time").html(formattedTime);
+ }
+
+ function displayRemainingTime(timeLeft) {
+ var hoursLeft = Math.floor(timeLeft / 3600);
+ var minutesLeft = Math.floor((timeLeft - (hoursLeft * 3600)) / 60);
+ var secondsLeft = Math.floor(timeLeft - (hoursLeft * 3600) - (minutesLeft * 60));
+ var remainingTime = hoursLeft + ":" + padWithZeroes(minutesLeft, 2) + ":" + padWithZeroes(secondsLeft, 2);
+$("#remaining-time").html(remainingTime);
+} function padWithZeroes(number, length) {
+ var paddedNumber = number.toString();
+ while (paddedNumber.length < length) {
+ paddedNumber = "0" + paddedNumber;
+ }
+ return paddedNumber;
+ }
+
+ function displayPrayerTimes(latitude, longitude) {
+ $.getJSON("http://api.aladhan.com/v1/timings?latitude=" + latitude + "&longitude=" + longitude + "&method=8&school=0", function(data){
+ $("#fajr").html(data.data.timings.Fajr);
+ $("#sunrise").html(data.data.timings.Sunrise);
+ $("#dhuhr").html(data.data.timings.Dhuhr);
+ $("#asr").html(data.data.timings.Asr);
+ $("#maghrib").html(data.data.timings.Maghrib);
+ $("#isha").html(data.data.timings.Isha);
+
+ var prayerTimes = {
+ "Fajr": data.data.timings.Fajr,
+ "Sunrise": data.data.timings.Sunrise,
+ "Dhuhr": data.data.timings.Dhuhr,
+ "Asr": data.data.timings.Asr,
+ "Maghrib": data.data.timings.Maghrib,
+ "Isha": data.data.timings.Isha
+ };
+
+ var now = new Date();
+ var timeInSeconds = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
+ var nextPrayer = null;
+ var timeLeft = 0;
+
+ for (var prayer in prayerTimes) {
+ var prayerTime = prayerTimes[prayer];
+ var timeArray = prayerTime.split(":");
+ var prayerInSeconds = parseInt(timeArray[0]) * 3600 + parseInt(timeArray[1]) * 60;
+ if (prayerInSeconds > timeInSeconds) {
+ nextPrayer = prayer;
+ timeLeft = prayerInSeconds - timeInSeconds;
+ break;
+ }
+ }
+
+ if (nextPrayer) {
+ displayRemainingTime(timeLeft);
+
+ if (timeLeft === 0) {
+ adhanAudio.play();
+ alert("حان وقت " + nextPrayer + "!");
+ } else {
+ setTimeout(function() {
+ adhanAudio.play();
+ alert("حان وقت " + nextPrayer + "!");
+ }, timeLeft * 1000);
+ }
+ } else {
+ $("#remaining-time").html("لا توجد صلوات متبقية اليوم.");
+ }
+ });
+ }
+
+ function getLocation() {
+ if (navigator.geolocation) {
+ navigator.geolocation.getCurrentPosition(function(position){
+ displayPrayerTimes(position.coords.latitude, position.coords.longitude);
+ });
+ } else {
+ alert("جهازك لا يدعم تحديد الموقع الجغرافي.");
+ }
+ }
+
+    $(document).ready(function(){
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(function(position){
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+                $.getJSON("http://api.aladhan.com/v1/timings?latitude=" + latitude + "&longitude=" + longitude + "&method=8&school=0", function(data){
+                    $("#fajr").html(convertTime(data.data.timings.Fajr));
+                    $("#sunrise").html(convertTime(data.data.timings.Sunrise));
+                    $("#dhuhr").html(convertTime(data.data.timings.Dhuhr));
+                    $("#asr").html(convertTime(data.data.timings.Asr));
+                    $("#maghrib").html(convertTime(data.data.timings.Maghrib));
+                    $("#isha").html(convertTime(data.data.timings.Isha));
+                });
+            });
+        } else {
+            alert("خدمة الموقع الجغرافي غير مدعومة على هذا المتصفح!");
+        }
+        displayLocalTime();
+        getLocation();
+        setInterval(displayLocalTime, 1000);
+    });
+
+    function convertTime(time) {
+        var hours = parseInt(time.substring(0, 2));
+        var minutes = time.substring(3, 5);
+        var ampm = hours >= 12 ? 'مساءً' : 'صباحًا';
+        hours = hours % 12;
+        hours = hours ? hours : 12;
+        return hours + ':' + minutes + ' ' + ampm;
+    }
+
+</script> 
 
 <script>
 
