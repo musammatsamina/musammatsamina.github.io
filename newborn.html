@@ -99,10 +99,35 @@
             <img src="imgs/s15.jpg" alt="" class="img-full wrapper-xs bg-white img-fluid">	
 
             <div class="card-body">
-              <p class="card-text text-justify">বাংলাদেশে অনেক শিশুই সময়ের আগেই বড় হয়ে যেতে বাধ্য হয়। নিজেদের পরিবারের বেঁচে থাকার কৌশলের অংশ হিসেবে অনেক কিশোর-কিশোরীকে প্রায়ই কাজে পাঠানো হয় বা তাদের অপরিণত বয়সে বিয়ে দিয়ে দেয়া হয়। পাঁচ থেকে ১৭ বছর বয়সী প্রায় সাত শতাংশ শিশু কোনো না কোনো ধরনের শিশুশ্রমে জড়িত। এছাড়াও খুব অল্পবয়সী শিশুদের ঝুঁকিপূর্ণ কাজে নিযুক্ত করা অব্যাহত রয়েছে।</p>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="twoModal" tabindex="-1" aria-labelledby="twoModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="twoModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        পাঁচ থেকে ১৭ বছর বয়সী প্রায় সাত শতাংশ শিশু কোনো না কোনো ধরনের শিশুশ্রমে জড়িত। এছাড়াও খুব অল্পবয়সী শিশুদের ঝুঁকিপূর্ণ কাজে নিযুক্ত করা অব্যাহত রয়েছে।
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+             
+              <p class="card-text text-justify">বাংলাদেশে অনেক শিশুই সময়ের আগেই বড় হয়ে যেতে বাধ্য হয়। নিজেদের পরিবারের বেঁচে থাকার কৌশলের অংশ হিসেবে অনেক কিশোর-কিশোরীকে প্রায়ই কাজে পাঠানো হয় বা তাদের অপরিণত বয়সে বিয়ে দিয়ে দেয়া হয়। </p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+<!-- Button trigger modal -->
+<button type="button" class="btn twobtn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#twoModal">
+  View
+</button>
                   <button type="button" class="btn btn-sm btn-outline-secondary">Link</button>
                 </div>
                 <small class="text-muted">9 mins</small>
@@ -228,6 +253,12 @@ $(document).on("click","#sbtn",function(){
   
 });
 
+    
+$(document).on("click","#twobtn",function(){
+  
+  $("#twoModal").modal("toggle");
+  
+});
 $('.owl-carousel').owlCarousel({
     rtl:true,
     loop:true,
