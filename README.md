@@ -2,7 +2,11 @@
 My Personal Knowledge share Website 
 
 https://pin.it/2Qv171S
+
+https://www.facebook.com/groups/1425788668256091/?ref=share
+
 https://musammatsamina.github.io
+https://musammatsamina.github.io/gallery.html
 
 <img src="https://i.pinimg.com/750x/ce/bf/be/cebfbe7afc23d0afca6a69355b6995a2.jpg" >
 
