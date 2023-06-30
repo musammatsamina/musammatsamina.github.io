@@ -80,7 +80,7 @@
 
                 <div class="btn-group">
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#sModal">
+<button type="button" class="btn sbtn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#sModal">
   View
 </button>
                  
@@ -221,7 +221,12 @@
 <script type="text/javascript">
 
 
-('#sModal').modal({ show: true });
+$(document).ready(function(){
+        $(".sbtn").click(function(){
+            $("#sModal").modal('show');
+        });
+    });
+
 
 $('.owl-carousel').owlCarousel({
     rtl:true,
