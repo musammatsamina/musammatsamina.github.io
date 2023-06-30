@@ -220,20 +220,8 @@
    </script>
 <script type="text/javascript">
 
-
-var myModal = document.getElementById('sModal');
-var myInput = document.getElementById('myInput');
-
 var myModal = new bootstrap.Modal(document.getElementById('sModal'), {
   keyboard: false;
-
-myModal.show();
-myModal.hide();
-});
-
-
-myModal.addEventListener('shown.bs.modal', function () {
-  myInput.focus();
 myModal.show();
 myModal.hide();
 });
