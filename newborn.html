@@ -180,13 +180,6 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
 <script>
 
-var myModal = document.getElementById('myModal')
-var myInput = document.getElementById('myInput')
-
-myModal.addEventListener('shown.bs.modal', function () {
-  myInput.focus()
-})
-
       function addHTML() {
          var el, i, domEl, fileName, xmlHttp;
          
@@ -226,6 +219,19 @@ myModal.addEventListener('shown.bs.modal', function () {
       addHTML();
    </script>
 <script type="text/javascript">
+
+
+var myModal = document.getElementById('myModal')
+var myInput = document.getElementById('myInput')
+
+myModal.show();
+
+myModal.hide()
+
+myModal.addEventListener('shown.bs.modal', function () {
+  myInput.focus()
+});
+
 $('.owl-carousel').owlCarousel({
     rtl:true,
     loop:true,
