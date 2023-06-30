@@ -1,7 +1,8 @@
-# musammatsamina.github.io
+# Newspaper Board
 My Personal Knowledge share Website 
 
 https://pin.it/2Qv171S
+https://musammatsamina.github.io
 
 <img src="https://i.pinimg.com/750x/ce/bf/be/cebfbe7afc23d0afca6a69355b6995a2.jpg" >
 
