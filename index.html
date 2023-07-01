@@ -613,6 +613,19 @@ Bagan Rajsahi Agro <i class="fa fa-whatsapp" aria-hidden="true"></i> </a>
 		<script src="dist/js/bootaide.min.js"></script>
 
 <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : 'your-app-id',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v17.0'
+    });
+  };
+</script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    
+
+<script>
 
     function addHTML() {
          var el, i, domEl, fileName, xmlHttp;
