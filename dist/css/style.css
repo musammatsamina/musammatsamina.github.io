@@ -1,3 +1,6 @@
+
+ .thumbnail-small img {width:100px;height:100px}
+
 /*Center child elements */
 .website-counter {
   display: flex;
