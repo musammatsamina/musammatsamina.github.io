@@ -76,7 +76,8 @@ https://www.facebook.com/profile.php?id=100075473425112
 </script>
 
 <script type="text/javascript">
-$('.owl-carousel').owlCarousel({
+var owl = $('.owl-carousel');
+owl.owlCarousel({
     rtl:true,
     loop:true,
     margin:1,
@@ -94,7 +95,7 @@ navText: [
             nav:true
         },
         600:{
-            items:3,
+            items:1,
             nav:false
         },
         1000:{
@@ -103,6 +104,15 @@ navText: [
             loop:false
         }
     }
+});
+
+owl.on('mousewheel', '.owl-stage', function (e) {
+    if (e.deltaY>0) {
+        owl.trigger('next.owl');
+    } else {
+        owl.trigger('prev.owl');
+    }
+    e.preventDefault();
 });
 </script>
 </body>
