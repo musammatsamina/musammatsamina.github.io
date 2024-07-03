@@ -43,7 +43,13 @@ https://www.facebook.com/profile.php?id=100075473425112
     <div class="item"><img src="imgs/sya10.jpg" alt=""></div>
     <div class="item"><img src="imgs/sya11.jpg" alt=""></div>
    
-</div></div>
+</div>
+<div class="slider_nav">
+	<button class="am-next">Next</button>
+	<button class="am-prev">Previous</button>
+</div>
+
+</div>
 </div>
 </section>
 		
@@ -111,12 +117,12 @@ navText: [
 });
 
 // Go to the next item
-$('.customNextBtn').click(function() {
+$('.am-next').click(function() {
     owl.trigger('next.owl.carousel');
 });
 
 // Go to the previous item
-$('.customPrevBtn').click(function() {
+$('.am-prev').click(function() {
     // With optional speed parameter
     // Parameters has to be in square bracket '[]'
     owl.trigger('prev.owl.carousel', [300]);
