@@ -16,6 +16,6 @@ https://musammatsamina.github.io/gallery.html
 
 <img src="https://i.pinimg.com/750x/40/4b/67/404b672c8adffd003a596a7812dd16ae.jpg">
 
-<a href='https://postimg.cc/zHSysqR8' target='_blank'><img src='https://i.postimg.cc/zHSysqR8/e90364bdbb5cf367efd13933b7e4e089.jpg' border='0' alt='e90364bdbb5cf367efd13933b7e4e089'/></a>
+<a href='https://postimg.cc/sBY1QVwS' target='_blank'><img src='https://i.postimg.cc/sBY1QVwS/Screenshot-20240804-105427-2.jpg' border='0' alt='Screenshot-20240804-105427-2'/></a>
 
 <a href='https://postimg.cc/gLPwtxjg' target='_blank'><img src='https://i.postimg.cc/gLPwtxjg/Grid-Art-20240804-091229110.jpg' border='0' alt='Grid-Art-20240804-091229110'/></a>
