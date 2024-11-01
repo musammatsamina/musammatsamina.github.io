@@ -1,0 +1,206 @@
+<!---Author: Musammat Samina
+Designation: Software Engineer
+Email : musammatsamina@gmail.com
+Mobile: 01722393251
+Address: C/O Al-hajj Md. Abdul Khalek, Mst. Sufia Begum, House 35(1st floor), Road 03, Block C, Section 12, Mirpur, Pallabi, Dhaka 1216, Bangladesh.
+Profile: https://facebook.com/musammat.samina
+https://www.facebook.com/profile.php?id=100075473425112
+---->
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<title>Health Journal</title>
+		<meta name="description" content="health journal Musammat Samina">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no" />
+		<link rel="shortcut icon" href="/favicon.ico">
+
+	    <link rel="stylesheet" href="bower_components/owl-carousel2/dist/assets/owl.carousel.min.css" />
+        <link rel="stylesheet" href="bower_components/owl-carousel2/dist/assets/owl.theme.default.min.css" />
+	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css">
+
+	</head>
+	<body>
+		<!--[if lt IE 10]>
+		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+
+<section>
+<div class="container">
+   <div class="row">
+<div class="owl-carousel owl-theme">
+    <div class="item"><img src="imgs/hc1.jpg" alt="Jahangir Gate"></div>
+    <div class="item"><img src="imgs/hc2.jpg" alt="Bangladesh Army Stadium"></div>
+    <div class="item"><img src="imgs/hc3.jpg" alt=""></div>
+    <div class="item"><img src="imgs/hc4.jpg" alt=""></div>
+    <div class="item"><img src="imgs/hc5.jpg" alt=""></div>
+    <div class="item"><img src="imgs/hc6.jpg" alt=""></div>
+    <div class="item"><img src="imgs/hc7.jpg" alt=""></div>
+    <div class="item"><img src="imgs/hc8.jpg" alt=""></div>
+    <div class="item"><img src="imgs/hc9.jpg" alt=""></div>
+    <div class="item"><img src="imgs/hc10.jpg" alt=""></div>
+    <div class="item"><img src="imgs/hc11.jpg" alt=""></div>
+   <div class="item"><img src="imgs/hc12.jpg" alt="Jahangir Gate"></div>
+    <div class="item"><img src="imgs/hc13.jpg" alt="Bangladesh Army Stadium"></div>
+    <div class="item"><img src="imgs/hc14.jpg" alt=""></div>
+    <div class="item"><img src="imgs/hc15.jpg" alt=""></div>
+    <div class="item"><img src="imgs/hc16.jpg" alt=""></div>
+    <div class="item"><img src="imgs/hc17.jpg" alt=""></div>
+    <div class="item"><img src="imgs/hc18.jpg" alt=""></div>
+    <div class="item"><img src="imgs/hc19.jpg" alt=""></div>
+    <div class="item"><img src="imgs/hc20.jpg" alt=""></div>
+    <div class="item"><img src="imgs/hc21.jpg" alt=""></div>
+<div class="item"><img src="imgs/hc22.jpg" alt=""></div>
+    <div class="item"><img src="imgs/hc23.jpg" alt=""></div>
+    <div class="item"><img src="imgs/hc24.jpg" alt=""></div>
+<div class="item"><img src="imgs/hc25.jpg" alt=""></div>
+    <div class="item"><img src="imgs/hc26.jpg" alt=""></div>
+    <div class="item"><img src="imgs/hc27.jpg" alt=""></div>
+<div class="item"><img src="imgs/hc28.jpg" alt=""></div>
+    <div class="item"><img src="imgs/hc29.jpg" alt=""></div>
+    <div class="item"><img src="imgs/hc30.jpg" alt=""></div>
+</div>
+<div class="slider_nav">
+	<button class="am-next">Next</button>
+	<button class="am-prev">Previous</button>
+</div>
+
+</div>
+</div>
+</section>
+		
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		
+		<script src="bower_components/owl-carousel2/dist/owl.carousel.min.js"></script>
+		
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-41EQ0WGSBY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-41EQ0WGSBY');
+</script>		
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : 'your-app-id',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v17.0'
+    });
+  };
+</script>
+
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script type="text/javascript">
+    var loggedIn = false;
+
+    function loginFacebook() {
+        //initializes the facebook API
+    }
+
+    function loadAlbums() {
+        FB.init({
+            appId: '',
+            status: true, // check login status
+            cookie: true, // enable cookies to allow the server to access the session
+            xfbml: true  // parse XFBML
+        });
+
+        FB.login(function (response) {
+            if (response.authResponse) {
+                //Logged in and accepted permissions!
+                document.getElementById("status").innerHTML = "Getting album information from your Facebook profile";
+                var counter = 0;
+
+                // Start Normal API
+                FB.api('/me/albums', function (response) {
+                    var d = response.data;
+                    for (var i = 0, l = d.length; i < l; i++) {
+                        addOption(response["data"][i].name, response["data"][i].id);
+                        counter++;
+                    }
+                    document.getElementById("status").innerHTML = "There are " + counter + " albums in your Facebook profile";
+                });
+
+                //end of  Normal API
+                document.getElementById("albumBtn").style.visibility = "hidden";
+            }
+        }, { scope: 'read_stream,publish_stream,offline_access,user_photos,friends_photos,user_photo_video_tags,friends_photo_video_tags' });
+    }
+
+    //Adds a new option into the drop down box
+    function addOption(opText, opVal) {
+        var v = document.getElementById("albumsList");
+        v.innerHTML += '<br/><a  href="facebookphotos.aspx?album=' + opVal + '&name=' + opText + '">' + opText + '</a>';
+    }
+
+    function init() {
+        var v1 = document.getElementById("albumBtn");
+        v1.onclick = loadAlbums;
+        // v1.style.visibility= "hidden";             
+    }
+
+    //calls init function once all the resources are loaded
+    window.addEventListener("load", init, true);
+</script>
+
+
+
+<script type="text/javascript">
+var owl = $('.owl-carousel');
+owl.owlCarousel({
+    rtl:true,
+    loop:true,
+    margin:1,
+    nav:true,
+    dots:false,
+    mouseDrag: true,
+    responsiveClass: true,
+    navContainer: '#nav',
+navText: [
+'<i class="fa fa-angle-left"></i>',  
+'<i class="fa fa-angle-right"></i>'],  responsiveClass:true,
+  responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        600:{
+            items:1,
+            nav:true
+        },
+        900:{
+            items:1,
+            nav:true
+        },
+        1200:{
+            items:1,
+            nav:true,
+            loop:false
+        }
+    }
+});
+
+// Go to the next item
+$('.am-next').click(function() {
+    owl.trigger('next.owl.carousel');
+});
+
+// Go to the previous item
+$('.am-prev').click(function() {
+    // With optional speed parameter
+    // Parameters has to be in square bracket '[]'
+    owl.trigger('prev.owl.carousel', [300]);
+});
+</script>
+</body>
+</html>
