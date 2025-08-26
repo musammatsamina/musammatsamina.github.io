@@ -1,20 +1,37 @@
-<html>
+<!DOCTYPE html>
+ <html>
+ <head>
+   <title>API Form Example</title>
+ </head>
+ <body>
+  <form id="api-form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
+     <label for="email">Email:</label>
+     <input type="email" id="email" name="email"><br><br>
+     <button type="submit">Submit</button>
+   </form>
+ 
+   <script>
+    const form = document.getElementById("api-form");
 
-    <body>
+     form.addEventListener("submit", (event) => {
+       event.preventDefault();
 
-        <p>Enter some text in the fields below, and then press the "Submit form" button to submit the form.</p>
+      const formData = new FormData(event.target);
 
-        <form id="myForm" action="/action_page.php">
-          First name: <input type="text" name="fname"><br>
-          Last name: <input type="text" name="lname"><br><br>
-          <input type="button" onclick="myFunction()" value="Submit form">
-        </form>
-
-        <script>
-            function myFunction() {
-                document.getElementById("myForm").submit();
-            }
-        </script>
-
-    </body>
+     fetch("https://example.com/api/endpoint", {
+         method: "POST",
+         body: formData,
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("API response:", data);
+         })
+         .catch((error) => {
+          console.error("API error:", error);
+        });
+     });
+   </script>
+ </body>
 </html>
